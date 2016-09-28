@@ -41,12 +41,12 @@
                 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
                 
                 <!-- TinyMCE -->
-                <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+                <script src="/js/lib/tinymce/tinymce.min.js"></script>
                 <script>tinymce.init({ selector:'textarea',automatic_uploads: true,
-                                        plugins: "image,fullscreen, link,textcolor colorpicker, code,visualblocks,contextmenu, preview", 
+                                        plugins: "image,fullscreen, link,textcolor colorpicker, code,visualblocks,contextmenu, preview, testimonial", 
                                         toolbar: "forecolor backcolor | Formatting,anchor,insertfile  undo redo | alignleft aligncenter " + 
                                                  "alignright alignjustify  | sizeselect | bold italic underline | fontselect |  fontsizeselect " +
-                                                 "| bullist numlist | link image | preview code",
+                                                 "| bullist numlist | link image | preview code | testimonial",
   plugin_preview_height: 500,plugin_preview_width: 840});</script>
 	<?php
                 echo $this->Html->meta('icon');

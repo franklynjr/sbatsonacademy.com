@@ -11,9 +11,9 @@ if(isset($testimonials))
     foreach($testimonials as $testimonial)
     {
         ?>
-            <div  class="row user-testimonial">
+            <div  class="row user-testimonial"  id="<?='testimonial_'.$testimonial["Testimonial"]['id'] ?>">
                 <div class="col-md-9 testimonial-content">
-                    <div><span><?=$testimonial['Testimonial']['title'] ?></span></div>
+                    <div><h4><?=$testimonial['Testimonial']['title'] ?></h4></div>
                     <hr class="testimonial-hr"/>
                     <div><span><?=$testimonial['Testimonial']['description'] ?></span></div>
                 </div>

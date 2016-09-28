@@ -13,7 +13,7 @@ if(isset($video)){ ?>
                          </a>
                 <?php
                         }else { ?>
-                            <a  class="topic-video-thumbnail"  <?php echo ($is_subscribed? 'href="/videos/watch/'.$video['id'] .'" ':'href="#" data-toggle="modal" data-target="#login-box"')?> >
+                            <a  class="topic-video-thumbnail"  <?php echo ($is_subscribed? 'href="/videos/watch/'.$video['id'] .'" ':'href="#"   onclick="(function update(){ $(\'#AppRedirect\').val(\'' .$redirect . '\');})()"  data-toggle="modal" data-target="#login-box"')?> >
                                 <img src=<?php echo (empty($video["thumbnail"]) ? "/img/video-icon.png" : '"' . $video["thumbnail"].'"') ?> alt="video-icon"/>
                             </a>
                         <?php } ?>
@@ -48,7 +48,7 @@ if(isset($video)){ ?>
                             <?php
                                 }else
                                 { ?>
-                                    <a class="watch-now-btn btn" <?php echo ($is_subscribed? 'href="/videos/watch/'.$video['id'] .'" ':'href="#" data-toggle="modal" data-target="#login-box"')?> ><span>watch now</span></a>
+                                    <a class="watch-now-btn btn" <?php echo ($is_subscribed? 'href="/videos/watch/'.$video['id'] .'" ':'href="#"   onclick="(function update(){ $(\'#AppRedirect\').val(\'' .$redirect . '\');})()"  data-toggle="modal" data-target="#login-box"')?> ><span>watch now</span></a>
                                 <?php
                                     }
                                 ?>
@@ -74,7 +74,7 @@ if(isset($video)){ ?>
                     <?php
                         }else
                         { ?>
-                            <a class="watch-now-btn btn" <?php echo ($is_subscribed? 'href="/videos/watch/'.$video['id'] .'" ':'href="#"  data-toggle="modal" data-target="#login-box"')?> ><span>watch now</span></a>
+                            <a class="watch-now-btn btn" <?php echo ($is_subscribed? 'href="/videos/watch/'.$video['id'] .'" ':'href="#"    onclick="(function update(){ $(\'#AppRedirect\').val(\'' .$redirect . '\');})()" data-toggle="modal" data-target="#login-box"')?> ><span>watch now</span></a>
                         <?php
                             }
                         ?>

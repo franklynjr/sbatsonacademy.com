@@ -1,14 +1,7 @@
 <?php
 
 
-        
-//        if($is_subscribed)
-//         echo 'test';
-//        print_r($user['Subscription']['end_date']);
 if(isset($topic)){
-//print_r($Video);
-//echo $this->Paginator->first(3);
-//echo $this->element('sidebar');
     
     $this->assign('title', 'Topic - ' . $topic['Topic']['name']);
     ?>
@@ -27,20 +20,6 @@ if(isset($topic)){
 <div id="content">
     
 
-      
-<!--    <div class="w-theme-button back col-md-3 col-xs-2">
-            <div class="back-arrow-img col-md-2 col-xs-12">
-                <a href="/courses/view/<?php echo $topic["Course"]["id"]; ?>">
-                    <img src="/img/back-arrow.png" alt="back" />                
-                </a>
-            </div>
-            <div class="col-md-10 hidden-xs">
-                <a href="/courses/view/<?php echo $topic["Course"]["id"]; ?>">
-                    <?php echo $topic["Course"]["name"]; ?>
-                </a>
-            </div>
-        </div>
-        -->
 
 
     
@@ -53,9 +32,10 @@ if(isset($topic)){
     <?php
     if(!empty($topic["Video"]))
     {
-//        foreach($topic["Video"] as $video)
+        
         foreach($Video as $video)
         {
+            // todo: system settings
             $video_view = "inline";
             
             if($video_view === "block")

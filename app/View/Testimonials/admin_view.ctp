@@ -55,6 +55,7 @@ echo $this->element('admin-testimonials-list');
  
  <script>
      $('.admin-testimonial-line')
+     
               $('.admin-testimonial-line').on('mouseleave', function(e)
                 {
                  $(this).find('.delete-testimonial').css('display', 'none');
@@ -64,4 +65,6 @@ echo $this->element('admin-testimonials-list');
              {
                 $(this).find('.delete-testimonial').css('display', 'block');
              });
+             
+             
  </script>
