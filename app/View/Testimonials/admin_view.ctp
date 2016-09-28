@@ -9,8 +9,59 @@
 
 <hr />
 <?php
-echo $this->element('testimonials-list-view');
+echo $this->element('admin-testimonials-list');
 
 ?>
 </div>
 </div>
+
+
+<style>
+    .admin-testimonial-line{
+        text-decoration: none;
+        color: #000;
+    }
+    
+    .admin-testimonial-line a{
+        text-decoration: none;
+        color: #000;
+    }
+    .admin-testimonial-line :hover{
+        text-decoration: none;
+    }
+    .admin-testimonial-line-description{
+        
+        line-height: 1.2em;
+        max-height: 60px;
+        overflow: hidden;
+    }
+    .delete-text{
+        color:red;
+        text-align: center;
+    }
+    .delete-testimonial-icon{
+        width: 32px;
+        height: 32px;
+    }
+    
+    .delete-testimonial{
+        display: none;
+    }    
+    
+    
+
+    
+ </style>
+ 
+ <script>
+     $('.admin-testimonial-line')
+              $('.admin-testimonial-line').on('mouseleave', function(e)
+                {
+                 $(this).find('.delete-testimonial').css('display', 'none');
+                });
+                
+             $('.admin-testimonial-line').on('mouseenter', function(e)
+             {
+                $(this).find('.delete-testimonial').css('display', 'block');
+             });
+ </script>
