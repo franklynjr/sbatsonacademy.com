@@ -20,6 +20,7 @@
                 <li><a href="#testimonials">Testimonials</a> </li>
                 <li><a href="#courses">Courses</a> </li>
                 <li><a href="/courses">Tutorials</a> </li>
+            <li><a href="/FAQs">FAQs</a> </li>
                 <?php    
                     if(isset($user))
                     {

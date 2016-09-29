@@ -17,8 +17,9 @@
              <div class="container">
              <ul  class="nav navbar-nav">
             <li><a href="/">Home</a> </li>
-            
+            <li><a href="/testimonials">Testimonials</a> </li>
             <li><a href="/courses">Tutorials</a> </li>
+            <li><a href="/FAQs">FAQs</a> </li>
            <?php 
             if(isset($user))
             {
