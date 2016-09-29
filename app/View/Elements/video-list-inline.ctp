@@ -80,7 +80,6 @@ if(isset($video)){ ?>
                         ?>
                     </div>
                 </div>
-
             </div>
         </div>
 <?php } ?>

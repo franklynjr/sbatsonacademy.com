@@ -14,4 +14,7 @@ require('../Lib/MediaManager/Media/Media.php');
 class Video extends AppModel{
     //put your code here
     public $belongsTo = array('Category', 'Topic');
+    
+    public $hasOne = 'UserVideoProgress';
+    
 }
