@@ -216,8 +216,10 @@ class UsersController extends AppController {
 //      Controller::render();
         
         Controller::loadModel('ResetToken');
-        $reset_token = $this->ResetToken->find('all', ['condition'=>["ResetToken.token = $token and ResetToken.expires > ". date_format(new DateTime(), 'Y-m-d H: ')]]);
-        
+        $reset_token = $this->ResetToken->find('all',['conditions' => ['ResetToken.token' => $token,
+                                                                                                          'ResetToken.expires >' => date_format(new DateTime(), 'Y-m-d H: ')]
+                                                                            ]);
+        print_r($reset_token);
         switch ($id){
             case 'password':
                 //$this->set('action', 'password');
@@ -232,17 +234,15 @@ class UsersController extends AppController {
                         {
 //                            print_r($reset_token[0]['ResetToken']['id']);
                             $user = $this->User->findById($reset_token[0]['ResetToken']['user_id']);
-                            print_r($user);
                             
                             if($user)
                             {
-                                $hasher = new BlowfishPasswordHasher;
-                                $user['User']['password'] = $hasher->hash($data['password']);
-                                if($this->User->save($user) &&
-                                $this->ResetToken->delete($reset_token[0]['ResetToken']['id']))
+                                $hasher = new BlowfishPasswordHasher();
+                                $user['Login']['password'] = $hasher->hash($data['password']);
+                                if($this->User->Login->save($user) && $this->ResetToken->deleteAll(['ResetToken.user_id' => $user['User']['id']]))
                                 {
                                     $this->Auth->logout();
-                                    $this->redirect('/users/login');
+                                    $this->redirect('/login');
                                 }
                             }
                         }
@@ -258,7 +258,6 @@ class UsersController extends AppController {
                     {
                         $this->set('token', $token);
                         //$this->set('token', $token);
-                        
                         $this->view = 'password_change';
                     }else
                     {
@@ -299,7 +298,15 @@ class UsersController extends AppController {
                     
                     if($user)
                     {
-                        $this->User->reset($user);
+                        if($this->User->reset($user))
+                        {
+                            
+                        $this->Flash->success('Please check your email to reset your password');
+                        }
+                    }else
+                    {
+                        
+                        $this->Flash->error('We didn\'t find a user associated with the email address you provided');
                     }
                 }
                 else

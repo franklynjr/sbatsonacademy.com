@@ -27,3 +27,6 @@ ehthumbs.db
 Thumbs.db
 /app/Contents/Videos/
 /app/Contents/Images/
+/app/Model/SystemConfig_old.php
+/app/Model/SystemConfig.php
+/app/Config/email.php

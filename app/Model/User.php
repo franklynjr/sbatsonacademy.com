@@ -8,7 +8,7 @@
 
 App::uses('AppModel', 'Model');
 App::uses('ResetToken', 'Model');
-App::uses('SystemConfig', 'Model');
+App::uses('email.php', 'Config');
 App::uses('CakeEmail', 'Network/Email');
 
 /**
@@ -23,6 +23,8 @@ class User extends AppModel {
                               'Address',
                               'Subscription'
                         );
+    
+    public $hasOne = 'Login';
     
     //for now we will allow the user to have only one address
 //    public $hasOne = array('Subscription');
@@ -62,13 +64,11 @@ class User extends AppModel {
         $Token->create();
         $Token->save($resetToken);
         
-        $emlConf = new SystemConfig();
-        
         //
-        $email = new CakeEmail();
+        $email = new CakeEmail('smtp');
         $email->to($user['User']['email']);
-        $email->config($emlConf->get('mail'));
-//        $email->message(CakeEmail::MESSAGE_HTML);
+       
+       //        $email->message(CakeEmail::MESSAGE_HTML);
         $email->subject('Reset Password - Seon Batson Tutoring');
         $email->template('reset_password', 'default');
         
@@ -77,7 +77,10 @@ class User extends AppModel {
                          ]);
         
         $email->emailFormat('html');
-        $email->send();
+        if($email->send())
+        {
+            return true;
+        }
     }
     
     
