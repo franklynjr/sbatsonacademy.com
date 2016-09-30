@@ -39,13 +39,13 @@ if(isset($testimonials))
         min-height: 200px;
     }
     .testimonial-content{
-        background-color: #f9f9f9;
         min-height: 240px;
     }
     .user-testimonial{
         margin-top: 50px; 
         padding-left: 20px;
         min-height: 240px;
+        background-color: #fcfcfc;
     }
     .testimonial-hr{
         padding: 0px;
