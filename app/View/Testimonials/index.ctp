@@ -31,29 +31,4 @@ if(isset($testimonials))
 }
 ?>
 
-<style>
-    .user-image{
-        background: url('/img/default-user-image.png') no-repeat;
-        background-size: contain;
-        width: 100%;
-        min-height: 200px;
-    }
-    .testimonial-content{
-        min-height: 240px;
-    }
-    .user-testimonial{
-        margin-top: 50px; 
-        padding-left: 20px;
-        min-height: 240px;
-        background-color: #fcfcfc;
-    }
-    .testimonial-hr{
-        padding: 0px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-    
-    
-</style>
-    
 </div>
