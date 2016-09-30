@@ -26,6 +26,7 @@ if(isset($testimonials))
                     </div>
                 </div>
             </div>
+    <hr />
 <?php
     }
 }
