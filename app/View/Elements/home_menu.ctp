@@ -35,7 +35,7 @@
                 <?php
                 if(isset($user))
                 { 
-                    echo '<p class="navbar-text navbar-username">Signed in as <a href="#" class="navbar-link">'.$user['User']['firstname'].'</a></p>';
+                    echo '<p class="navbar-text navbar-username">Signed in as <a href="/account" class="navbar-link">'.$user['User']['firstname'].'</a></p>';
                     //echo '<div>'.$user['firstname'].'</div>';
                 }  else {
                     echo '<div class="sign-up-btn btn"><p class="navbar-text"><a href="/signup" class="navbar-link">Sign up</a></p></div>';

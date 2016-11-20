@@ -15,7 +15,7 @@
                     <li role="presentation">
                         <!--<div class="container" data-parent="#sb-cat" data-toggle="collapse" data-target="#<?php // echo str_replace( " ", "_",$id); ?>">-->
                         <div class="container">
-                                <div class="category-container panel panel-default row">
+                                <div class="category-container row">
                                     <div class="image-container col-md-1 col-xs-4">
                                         <a href="/courses/view/<?php echo strtolower($cat); ?> ">
                                             <img class="course-image"<?php echo 'src="'.$course["Course"]['image'].'" alt="'.$cat .'"'; ?> />
@@ -44,6 +44,7 @@
                                     </div>
                                 </div>
                         </div>
+                        <hr />
                     </li>
                <?php
                }

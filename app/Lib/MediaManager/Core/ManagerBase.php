@@ -14,8 +14,21 @@
 if(!defined('DS'))
     define('DS', DIRECTORY_SEPARATOR);
 
+
 if(!defined('CONTENTS'))
     define('CONTENTS','..'.DS.'Contents'.DS);
+
+if(!defined('WEBROOT'))
+    define('WEBROOT','..'.DS.'webroot'.DS);
+
+if(!defined('CSS_DIR'))
+    define('CSS_DIR', WEBROOT.'css'.DS);
+
+if(!defined('JS_DIR'))
+    define('JS_DIR', WEBROOT.'js'.DS);
+
+if(!defined('IMG_DIR'))
+    define('IMG_DIR', WEBROOT.'img'.DS);
 
 if(!defined('VIDEOS'))
     define('VIDEOS', CONTENTS.'Videos'.DS);

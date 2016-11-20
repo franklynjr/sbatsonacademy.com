@@ -336,10 +336,10 @@ class UsersController extends AppController {
         
     }
     
-    public function account(){
+    
+    public function profile(){
         
     }
-
     
    public function exists($username)
    {

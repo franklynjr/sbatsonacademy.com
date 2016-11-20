@@ -14,7 +14,17 @@ App::uses('AppController', 'Controller');
  */
 class StyleSheetsController extends AppController {
 
-    public function index($id) {
+    public function admin_index() {
+        
+    }
+    
+    public function admin_create()
+    {
+        
+    }
+    
+    public function edit($stylesheet)
+    {
         
     }
 

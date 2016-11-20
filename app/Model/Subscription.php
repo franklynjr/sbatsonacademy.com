@@ -16,5 +16,6 @@ class Subscription extends AppModel {
     
     public $hasOne = array(
                               'User',
-                              'SubscriptionPlan');
+                              );
+    public $belongsTo = 'SubscriptionPlan';
 }

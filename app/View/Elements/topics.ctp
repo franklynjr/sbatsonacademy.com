@@ -14,7 +14,7 @@
                         ?>
                     <li role="presentation">
                         <div class="container-fluid" data-parent="#sb-cat" data-toggle="collapse" data-target="#<?php echo $id; ?>">
-                                <div class="category-container panel panel-default row" style="cursor: default">
+                                <div class="category-container row" style="cursor: default">
                                     <div class="image-container col-md-1 col-xs-4">
                                         <a href="/topics/view/<?php echo strtolower($cat); ?> ">
                                             <img <?php echo 'src="'.$topic["Topic"]['image'].'" alt="'.$cat .'"'; ?> />
@@ -45,7 +45,8 @@
                                     </div>
                                 </div>
                         </div>
-                            
+                        <hr />
+                    </li> 
             <?php }} ?>
         </ul>
     </div>
