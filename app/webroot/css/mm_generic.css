@@ -1274,4 +1274,26 @@ hr{
     margin-top: 5px;
     margin-bottom: 5px;
 }
-    
+.mm-dropdown-menu{
+    background-color: #1fb9f5;
+}
+.nav .open>a .open>a:focus .open>a:hover{
+    background-color: transparent; 
+}
+.nav .dropdown-label .dropdown-label:focus .dropdown-label:hover{
+    background-color: transparent; 
+}
+.open>a{
+    outline:5px;
+}
+.dropdown-label{
+    background-color: transparent; 
+}
+
+.mm-dropdown{
+    padding-top: 30px;
+}
+
+.mm-dropdown>a{
+    text-transform: uppercase;
+}

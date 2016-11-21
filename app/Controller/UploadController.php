@@ -76,15 +76,36 @@ class UploadController extends AppController {
     }
 
     
-    public function script() {
+    public function admin_script() {
         if($this->request->is("post"))
         {
-            //
-            $filename = $this->request->data["file"]['tmp_name'];
-            $name = $this->request->data["file"]['name'];
+            
+            $filename = $this->request->data['Script']["filename"]['tmp_name'];
+            $name = $this->request->data['Script']["filename"]['name'];
             $destination = JS_DIR.$name;
-            move_uploaded_file($filename, $destination);
+            
+            if(move_uploaded_file($filename, $destination))
+            {
+                $fiendly_name = $this->request->data['Script']['name'];
+                $image = ['Upload'=>['name'=>$fiendly_name,
+                                    'type'=>'javascript',
+                                    'filename'=>$name,
+                                    'path' => $destination,
+                                    'url' => '/js/'.$name]
+                        ];
+                $this->Upload->create();
+                
+                if($this->Upload->save($image)){
+                    echo $this->Flash->success("File was successfully uploaded");
+                }
+            }  else {
+                echo $this->Flash->error("Upload failed");
+            }
         }
+    }
+    
+    private function post($type){
+        
     }
     
 }

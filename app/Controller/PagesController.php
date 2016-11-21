@@ -139,15 +139,16 @@ class PagesController extends AppController {
 
     public function admin_view() {
         $this->layout = 'admin_default';
-        $pages = $this->Page->find('all');
+        $pages = $this->Page->findByType('user');
         $this->set('pages', $pages);
     }
     
     
     public function admin_delete($id) {
         $this->layout = 'admin_default';
+        $page = $this->Page->findById($id);
         
-        if($this->request->is('post'))
+        if($this->request->is('post') && $page['Page']['type'] != 'system')
         {
             //$page = $this->Page->findById($id);
             if($this->Page->delete($id))
@@ -156,9 +157,8 @@ class PagesController extends AppController {
             }
         }
         
-        $page = $this->Page->findById($id);
         
-        if(!$page)
+        if(!$page || $page['Page']['type'] == 'system')
         {
                 $this->redirect('/admin/pages/view');
         }
@@ -192,7 +192,7 @@ class PagesController extends AppController {
             }
         }
         
-        $this->request->data = $this->Page->findById($id);
+        $this->request->data = $this->Page->findByIdOrName($id, $id);
     }
     
     public function view($name) {
